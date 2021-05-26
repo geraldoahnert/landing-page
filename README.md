@@ -2,5 +2,5 @@
 
 Building...
 
--> Client = Front-End
--> Server = Back-End
+-   Client - Front-End
+-   Server - Back-End
