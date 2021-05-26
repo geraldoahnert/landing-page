@@ -1,3 +1,6 @@
 # Landing Page
 
-Em construção...
+Building...
+
+-> Client = Front-End
+-> Server = Back-End
