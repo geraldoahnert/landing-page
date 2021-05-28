@@ -1,4 +1,5 @@
 import classNames from "classnames";
+
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
@@ -46,7 +47,7 @@ function Navbar() {
                                         alt="Workflow"
                                     />
                                 </div>
-                                <div className="absolute inset-y-0 flex items-center right-0 sm:ml-6">
+                                <div className="hidden absolute right-0 items-center sm:block sm:ml-6">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
                                             <a
