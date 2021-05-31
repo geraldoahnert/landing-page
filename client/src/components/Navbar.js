@@ -4,8 +4,8 @@ import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-    { name: "Home", href: "#", current: true },
-    { name: "Register", href: "#", current: false },
+    { name: "Home", href: "/", current: true },
+    { name: "Register", href: "/register", current: false },
 ];
 
 function Navbar() {
