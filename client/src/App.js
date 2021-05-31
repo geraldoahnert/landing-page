@@ -1,14 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar.js";
-import FirstPage from "./components/FirstPage.js";
+import Navbar from "./components/Navbar";
+import FirstPage from "./components/FirstPage";
+import LandingPage from "./components/LandingPage";
 
 function App() {
     return (
         <Router>
             <Navbar />
-            <FirstPage />
+
+            <Switch>
+                <Route exact path="/">
+                    <FirstPage />
+                </Route>
+                <Route path="/register">
+                    <LandingPage />
+                </Route>
+            </Switch>
         </Router>
     );
 }
