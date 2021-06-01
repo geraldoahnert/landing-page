@@ -1,14 +1,30 @@
 import classNames from "classnames";
+import { useLocation } from "react-router-dom";
 
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import React from "react";
 
 const navigation = [
-    { name: "Home", href: "/", current: true },
-    { name: "Register", href: "/register", current: false },
+    { name: "Home", href: "/", current: Boolean },
+    { name: "Register", href: "/register", current: Boolean },
 ];
 
+function ActualLocation() {
+    let location = useLocation();
+
+    if (location.pathname === "/") {
+        navigation[0].current = true;
+        navigation[1].current = false;
+    } else {
+        navigation[0].current = false;
+        navigation[1].current = true;
+    }
+}
+
 function Navbar() {
+    ActualLocation();
+
     return (
         <Disclosure as="nav" className="bg-gray-800">
             {({ open }) => (
