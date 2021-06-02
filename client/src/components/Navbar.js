@@ -22,7 +22,7 @@ function ActualLocation() {
     }
 }
 
-function Navbar() {
+export default function Navbar() {
     ActualLocation();
 
     return (
@@ -117,5 +117,3 @@ function Navbar() {
         </Disclosure>
     );
 }
-
-export default Navbar;
