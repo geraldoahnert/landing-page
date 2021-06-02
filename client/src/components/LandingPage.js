@@ -1,6 +1,14 @@
+import { useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export default function LandingPage() {
+    const [email, setName] = useState("");
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        alert(`Submitting Email ${email}`);
+    };
+
     return (
         <div className="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
@@ -14,7 +22,12 @@ export default function LandingPage() {
                         Register your email
                     </h2>
                 </div>
-                <form className="mt-8 space-y-6" action="#" method="POST">
+                <form
+                    onSubmit={handleSubmit}
+                    className="mt-8 space-y-6"
+                    action="#"
+                    method="POST"
+                >
                     <div className="rounded-md shadow-sm -space-y-px">
                         <div>
                             <label htmlFor="email-address" className="sr-only">
@@ -28,6 +41,8 @@ export default function LandingPage() {
                                 required
                                 className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                 placeholder="Email address"
+                                value={email}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                     </div>
