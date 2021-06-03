@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const port = 5000; // Same client proxy port.
 
-app.get("/", (_req, res) => {
-    res.send("Hello World!");
+app.post("/register", () => {
+    res.send("Ok, you find me. The Post!");
 });
 
 app.listen(port, () => {
