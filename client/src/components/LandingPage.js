@@ -1,12 +1,25 @@
 import { useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
+import axios from "axios";
+
 export default function LandingPage() {
     const [email, setName] = useState("");
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
         alert(`Submitting Email ${email}`);
+
+        axios
+            .post("/register", {
+                email,
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (
