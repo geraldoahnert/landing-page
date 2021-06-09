@@ -1,3 +1,5 @@
+import "../database/index.js";
+
 const express = require("express");
 const app = express();
 const port = 5000; // Same client proxy port.
