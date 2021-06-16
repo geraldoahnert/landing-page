@@ -1,7 +1,7 @@
 import { Router } from "express";
 
+import EmailController from "./controllers/EmailController.js";
+
 const router = Router();
 
-router.post("/register", (req) => {
-    console.log(req.body);
-});
+router.post("/register", EmailController);
