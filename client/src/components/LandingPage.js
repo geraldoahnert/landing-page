@@ -9,7 +9,7 @@ export default function LandingPage() {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         axios
-            .post("/register-email/", {
+            .post("/register", {
                 email,
             })
             .then(function (response) {
