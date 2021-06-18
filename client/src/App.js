@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import FirstPage from "./components/FirstPage";
-import LandingPage from "./components/LandingPage";
+import FirstPage from "./pages/FirstPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
     return (

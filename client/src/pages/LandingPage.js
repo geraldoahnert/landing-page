@@ -1,25 +1,10 @@
 import { useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/solid";
-
-import axios from "axios";
+import { handleSubmit } from "../api/EmailAPI";
 
 export default function LandingPage() {
     const [email, setName] = useState("");
-
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        axios
-            .post("/register", {
-                email,
-            })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    };
-
+    handleSubmit(email);
     return (
         <div className="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
