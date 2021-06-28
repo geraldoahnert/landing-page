@@ -9,4 +9,4 @@ class User {
     email: string;
 }
 
-export default User;
+export { User };
