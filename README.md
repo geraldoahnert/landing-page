@@ -4,4 +4,4 @@
 
 ## About
 
-Landing Page with front and back architecture. Capture use email and save to database.
+Landing Page with front and back architecture. Capture user email and save to database.
