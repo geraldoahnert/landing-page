@@ -1,23 +1,21 @@
-import classNames from "classnames";
-import { useLocation } from "react-router-dom";
+import classNames from 'classnames';
+import { useLocation } from 'react-router-dom';
 
-import { Disclosure } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import React from "react";
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import React from 'react';
 
 const navigation = [
-    { name: "Home", href: "/", current: Boolean },
-    { name: "Register", href: "/register", current: Boolean },
+    { name: 'Home', href: '/', current: false },
+    { name: 'Register', href: '/register', current: false },
 ];
 
 function ActualLocation() {
     let location = useLocation();
 
-    if (location.pathname === "/") {
+    if (location.pathname === '/') {
         navigation[0].current = true;
-        navigation[1].current = false;
     } else {
-        navigation[0].current = false;
         navigation[1].current = true;
     }
 }
@@ -71,13 +69,13 @@ export default function Navbar() {
                                                 href={item.href}
                                                 className={classNames(
                                                     item.current
-                                                        ? "bg-gray-900 text-white"
-                                                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                    "px-3 py-2 rounded-md text-sm font-medium"
+                                                        ? 'bg-gray-900 text-white'
+                                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                    'px-3 py-2 rounded-md text-sm font-medium'
                                                 )}
                                                 aria-current={
                                                     item.current
-                                                        ? "page"
+                                                        ? 'page'
                                                         : undefined
                                                 }
                                             >
@@ -99,12 +97,12 @@ export default function Navbar() {
                                     href={item.href}
                                     className={classNames(
                                         item.current
-                                            ? "bg-gray-900 text-white"
-                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                        "block px-3 py-2 rounded-md text-base font-medium"
+                                            ? 'bg-gray-900 text-white'
+                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                     aria-current={
-                                        item.current ? "page" : undefined
+                                        item.current ? 'page' : undefined
                                     }
                                 >
                                     {item.name}
