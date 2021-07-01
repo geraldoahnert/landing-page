@@ -2,21 +2,26 @@ import { useState } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/solid';
 import axios from 'axios';
 
+import validator from 'validator';
+
 export default function LandingPage() {
-    const [email, setName] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        axios
-            .post('/register', {
-                email,
-            })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+
+        if (validator.isEmail(email)) {
+            axios
+                .post('/register', {
+                    email,
+                })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
     };
 
     return (
@@ -52,7 +57,7 @@ export default function LandingPage() {
                                 className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                 placeholder="Email address"
                                 value={email}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                     </div>
