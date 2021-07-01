@@ -1,12 +1,20 @@
 import { getCustomRepository } from 'typeorm';
 import { UsersRepositories } from '../repositories/UsersRepositories';
 
+import validator from 'validator';
+
 interface IUser {
     email: string;
 }
 
 class UserService {
     async execute({ email }: IUser) {
+        const userEmailValidator = validator.isEmail(email);
+
+        if (!userEmailValidator) {
+            throw new Error('Email invalid!');
+        }
+
         const usersRepositories = getCustomRepository(UsersRepositories);
 
         const userExists = await usersRepositories.findOne({
