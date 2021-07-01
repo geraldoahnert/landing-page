@@ -3,12 +3,13 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node-dev --files ./src/index.ts",
+        "start": "ts-node-dev --files ./src/server.ts",
         "typeorm": "npx ts-node ./node_modules/typeorm/cli.js"
     },
     "license": "MIT",
     "dependencies": {
         "express": "^4.17.1",
+        "express-async-errors": "^3.1.1",
         "pg": "^8.6.0",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.2.34"
